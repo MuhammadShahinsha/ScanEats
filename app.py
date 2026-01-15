@@ -162,9 +162,8 @@ def init_db():
 # ---------- ROUTES ----------
 @app.route("/")
 def index():
-    qr = qrcode.make("https://hotel-menu-qr.onrender.com/menu")
-    qr.save("static/qr.png")
-    return render_template("index.html")
+    return redirect("/menu")
+
 
 @app.route("/menu")
 def menu():
