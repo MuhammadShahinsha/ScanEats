@@ -1,22 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Cart</title>
+    <title>Your Cart</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<h1>Your Cart</h1>
+<div class="cart-container">
+    <div class="cart-title">Your Cart</div>
 
-{% for item in cart %}
-<div class="card">
-    <p>{{ item.name }} - ₹{{ item.price }}</p>
-    <a href="/remove_item/{{ loop.index0 }}" class="remove">Remove</a>
+    {% for item in cart %}
+        <div class="cart-item">
+            <p>{{ item.name }} – ₹{{ item.price }}</p>
+            <a href="/remove_item/{{ loop.index0 }}" class="remove">Remove</a>
+        </div>
+    {% endfor %}
+
+    <div class="cart-total">Total: ₹{{ total }}</div>
+
+    <a href="/confirm_order" class="checkout">Confirm Order</a>
 </div>
-{% endfor %}
-
-<h2>Total: ₹{{ total }}</h2>
-<a href="/confirm_order" class="checkout">Confirm Order</a>
 
 </body>
 </html>

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Success</title>
+    <title>Order Confirmed</title>
     <link rel="stylesheet" href="/static/style.css">
 </head>
 <body>
 
-<h1>Order Confirmed 🎉</h1>
-<p>Total Paid: ₹{{ total }}</p>
-
-<a href="/menu">Order Again</a>
+<div class="success-container">
+    <div class="success-title">Order Confirmed 🎉</div>
+    <div class="success-total">Total Paid: ₹{{ total }}</div>
+    <a href="/menu" class="order-again">Order Again</a>
+</div>
 
 </body>
 </html>
