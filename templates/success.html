@@ -9,7 +9,10 @@
 <div class="success-container">
     <div class="success-title">Order Confirmed 🎉</div>
     <div class="success-total">Total Paid: ₹{{ total }}</div>
-    <a href="/menu" class="order-again">Order Again</a>
+    <a href="/menu?table={{ session['table_no'] }}" class="order-again">
+    Order Again
+</a>
+
 </div>
 
 </body>
